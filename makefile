@@ -1,6 +1,7 @@
 ## Build all the examples
 build:
 	go build -o gorilla-example gorilla/gorilla.go
+	go build -o gin-example gin/gin.go.
 
 sanitize:
 	go fmt ./...
@@ -21,3 +22,4 @@ destroy:
 ## Clean up the .dat offset files
 clean:
 	rm -f ./gorilla-example
+	rm -f ./gin-example
