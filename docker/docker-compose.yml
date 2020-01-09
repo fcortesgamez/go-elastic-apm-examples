@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 services:
   apm:
@@ -40,6 +40,30 @@ services:
       - ELASTICSEARCH_PASSWORD=password
     depends_on:
       - elasticsearch
+
+  mysql:
+    image: mysql
+    container_name: "mysql"
+    restart: always
+    environment:
+      MYSQL_DATABASE: "test"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "password"
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mysql/:/docker-entrypoint-initdb.d
+    networks:
+      - apm
+
+volumes:
+  mysql-data:
+    name: mysql-data
+
 networks:
   apm:
     driver: bridge

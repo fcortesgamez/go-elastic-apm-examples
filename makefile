@@ -9,7 +9,7 @@ sanitize:
 
 ## Start docker containers for Elasticsearch, Kibana and the APM server
 start:
-	docker-compose -f ./docker/docker-compose.yml up -d elasticsearch kibana apm
+	docker-compose -f ./docker/docker-compose.yml up -d elasticsearch kibana apm mysql
 
 ## Stop all docker containers
 stop:
