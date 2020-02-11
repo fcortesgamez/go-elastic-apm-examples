@@ -1,7 +1,8 @@
 ## Build all the examples
 build:
 	go build -o gorilla-example gorilla/gorilla.go
-	go build -o gin-example gin/gin.go.
+	go build -o gin-example gin/gin.go
+	go build -o mysql-example mysql/mysql.go
 
 sanitize:
 	go fmt ./...
@@ -23,3 +24,4 @@ destroy:
 clean:
 	rm -f ./gorilla-example
 	rm -f ./gin-example
+	rm -r ./mysql-example

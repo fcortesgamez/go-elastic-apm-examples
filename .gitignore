@@ -4,6 +4,7 @@
 # IntelliJ IDEA
 *.iml
 .idea/
+.vscode/
 
 # Binaries for programs and plugins
 *.exe
